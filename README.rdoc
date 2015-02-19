@@ -2,3 +2,31 @@
   - rmagick 2.13.2
   -paperclip git: "git://github.com/thoughtbot/paperclip.git"
   -'bootstrap-sass', '~> 3.3.1'
+  -RMagick is a binding from Ruby to the ImageMagick TM image manipulation library. Here's how the ImageMagick home page describes ImageMagick:
+
+    ImageMagickTM... is a free software suite to create, edit, and compose bitmap images. It can read, convert and write images in a large variety of formats. Images can be cropped, colors can be changed, various effects can be applied, images can be rotated and combined, and text, lines, polygons, ellipses and Bézier curves can be added to images and stretched and rotated.
+
+    ImageMagick offers a full range of image processing tools that provide the capability to:
+
+    Convert an image from one format to another (e.g. TIFF to JPEG)
+    Resize, rotate, sharpen, color reduce, or add special effects to an image
+    Create a montage of image thumbnails
+    Create a transparent image suitable for use on the Web
+    Turn a group of images into a GIF animation sequence
+    Create a composite image by combining several separate images
+    Draw shapes or text on an image
+    Decorate an image with a border or frame
+    Describe the format and characteristics of an image
+
+  -Paperclip:
+    Paperclip is intended as an easy file attachment library for Active Record.
+    The intent behind it was to keep setup as easy as possible and to treat files as much like other attributes as possible.
+    This means they aren't saved to their final locations on disk, nor are they deleted if set to nil, until ActiveRecord::Base#save is called.
+    It manages validations based on size and presence, if required. It can transform its assigned image into thumbnails if needed, and the prerequisites are as simple as installing ImageMagick (which, for most modern Unix-based systems, is as easy as installing the right packages).
+    Attached files are saved to the filesystem and referenced in the browser by an easily understandable specification, which has sensible and useful defaults.
+2. CRUD products
+  -add :photo in .permit section of product_params
+  add product model
+    - this is where you will tell your app where to find the actual photos, you can have pointers to point to the photos due to the fact that storing them in your database
+    would create really bad performance issues and your heroku app would most likely break.
+    
